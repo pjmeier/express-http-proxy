@@ -48,7 +48,7 @@ module.exports = function proxy(host, userOptions) {
           var resolver = (container.options.proxyErrorHandler) ?
             container.options.proxyErrorHandler :
             handleProxyErrors;
-          resolver(err, res, next);
+          resolver(err, res, next, req);
         } else {
           // I sometimes reject without an error to shortcircuit the remaining
           // steps -- e.g. in maybeSkipToNextHandler -- and return control to
